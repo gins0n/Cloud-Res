@@ -4,7 +4,7 @@ provider "google" {
   region      = "us-central1"
 }
 
-resource "google_storage_bucket" "static-site" {
+resource "google_storage_bucket" "static_site" {
   provider = google
   name          = "gins0n.dev"
   location      = "US"
