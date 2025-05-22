@@ -6,7 +6,7 @@ provider "google" {
 
 resource "google_storage_bucket" "staticsite" {
   provider = google
-  name          = "gins0n.dev"
+  name     = "gins0n.dev"
   location = "us-central1"
 
   website {
@@ -15,7 +15,7 @@ resource "google_storage_bucket" "staticsite" {
   cors {
     origin          = ["*"]
     method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
-   response_header = ["*"]
+    response_header = ["*"]
     max_age_seconds = 3600
   }
 }
@@ -65,7 +65,7 @@ resource "google_compute_backend_bucket" "staticsite" {
 # Create HTTPS certificate
 resource "google_compute_managed_ssl_certificate" "staticsite" {
   provider = google-beta
-  project = "cloud-resume-460323"
+  project  = "cloud-resume-460323"
   name     = "staticsite-cert"
   managed {
     domains = [google_dns_record_set.staticsite.name]
