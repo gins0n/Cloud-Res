@@ -32,6 +32,7 @@ resource "google_storage_bucket_object" "staticsite_src" {
   source = "Adam-Rioux-Resume.html"
   bucket = google_storage_bucket.staticsite.name
 }
+
 resource "google_storage_default_object_access_control" "public_rule" {
   bucket = google_storage_bucket.staticsite.name
   role   = "READER"
