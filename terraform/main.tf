@@ -33,7 +33,7 @@ resource "google_storage_bucket_object" "staticsite_src" {
   bucket = google_storage_bucket.staticsite.name
 }
 
-# Make bucket public
+# Make bucket public - iam
 resource "google_storage_bucket_iam_member" "public_rule" {
   provider = google
   bucket   = google_storage_bucket.staticsite.name
