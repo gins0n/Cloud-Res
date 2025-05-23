@@ -34,7 +34,7 @@ resource "google_storage_bucket_object" "staticsite_src" {
 }
 
 # Make bucket public
-resource "google_storage_bucket_iam_member" "staticsite" {
+resource "google_storage_bucket_iam_member" "public_rule" {
   provider = google
   bucket   = google_storage_bucket.staticsite.name
   role     = "roles/storage.objectViewer"
@@ -98,7 +98,6 @@ resource "google_compute_target_https_proxy" "staticsite" {
 }
 
 # GCP forwarding rule
-# testing
 resource "google_compute_global_forwarding_rule" "default" {
   provider              = google
   name                  = "staticsite-forwarding-rule"
