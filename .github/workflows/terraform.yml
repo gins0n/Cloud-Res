@@ -81,9 +81,9 @@ jobs:
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-        gcp_svc_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-        gcp_project: cloud-resume-460323
-        gcp_region: us-central1
+        TF_VAR_gcp_svc_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        TF_VAR_gcp_project: cloud-resume-460323
+        TF_VAR_gcp_region: us-central1
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
