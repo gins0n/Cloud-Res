@@ -88,7 +88,6 @@ resource "google_compute_target_https_proxy" "staticsite" {
 }
 
 # GCP forwarding rule
-# comment adding for testing
 resource "google_compute_global_forwarding_rule" "default" {
   provider              = google
   name                  = "staticsite-forwarding-rule"
