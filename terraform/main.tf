@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file(var.gcp_svc_key)
+  credentials = var.gcp_svc_key
   project     = "cloud-resume-460323"
   region      = "us-central1"
 }
