@@ -1,3 +1,10 @@
+terraform {
+    backend "gcs" { 
+      bucket  = " terraform-state-arioux-cicdproject"
+      prefix  = "dev"
+    }
+}
+
 provider "google" {
   credentials = var.gcp_svc_key
   project     = "cloud-resume-460323"
