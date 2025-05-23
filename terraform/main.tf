@@ -1,7 +1,7 @@
 terraform {
     backend "gcs" { 
-      bucket  = " terraform-state-arioux-cicdproject"
-      prefix  = "dev"
+      bucket  = "terraform-state-arioux-cicdproject"
+      prefix  = "prod"
     }
 }
 
