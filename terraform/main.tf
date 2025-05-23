@@ -32,10 +32,13 @@ resource "google_storage_bucket_object" "staticsite_src" {
   source = "Adam-Rioux-Resume.html"
   bucket = google_storage_bucket.staticsite.name
 }
-resource "google_storage_default_object_access_control" "public_rule" {
-  bucket = google_storage_bucket.staticsite.name
-  role   = "READER"
-  entity = "allUsers"
+
+# Make bucket public
+resource "google_storage_bucket_iam_member" "staticsite" {
+  provider = google
+  bucket   = google_storage_bucket.staticsite.name
+  role     = "roles/storage.objectViewer"
+  member   = "allUsers"
 }
 
 # Reserve an external IP
